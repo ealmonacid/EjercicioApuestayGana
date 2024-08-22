@@ -10,13 +10,13 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         Random aleatorio = new Random();
         int dinero;
-        int op=0;
+        int op=1;
         int num;
         int x;
         System.out.println("APUESTA Y GANA");
         System.out.println("INTRODUCE UNA CANTIDAD DE DINERO");
         dinero=teclado.nextInt();
-        while(op==0){
+        while(op==1){
             num=aleatorio.nextInt(1,4);
             System.out.println("NUMERO ALEATORIO: "+num);
             switch (num){
@@ -25,31 +25,21 @@ public class Main {
                     System.out.println("Su dinero es $"+dinero);
                     System.out.println("¿Quiere seguir jugando?");
                     System.out.println("1. SI\n2. NO");
-                    x=teclado.nextInt();
-                    if(x==1){
-                        op=0;
-                    } if(x==2){
-                        op=1;
-                    }
+                    op=teclado.nextInt();
                     break;
                 case 2:
                     dinero=dinero/2;
                     System.out.println("Su dinero es $"+dinero);
                     System.out.println("¿Quiere seguir jugando?");
                     System.out.println("1. SI\n2. NO");
-                    x=teclado.nextInt();
-                    if(x==1){
-                        op=0;
-                    } if(x==2){
-                    op=1;
-                }
+                    op=teclado.nextInt();
                     break;
                 case 3:
                     dinero=0;
                     System.out.println("Su dinero es $"+dinero);
                     System.out.println("PERDIO TODO SU DINERO");
                     System.out.println("TERMINO EL JUEGO");
-                    op=1;
+                    op=2;
                     break;
             }
         }
